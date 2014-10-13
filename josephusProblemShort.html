@@ -1,0 +1,18 @@
+<html>
+	<script>
+		
+		alert(josephus(100,2,1));
+		
+		function josephus( n,  k,  startingPoint) {
+			if(n == 1)
+				return 1;
+			var newSp = (startingPoint + k - 2) % n + 1;
+ 
+			var survivor = josephus(n - 1, k, newSp);
+			if (survivor < newSp) {
+				return survivor;
+			} else
+			return survivor + 1;
+		}
+	</script>
+</html>
